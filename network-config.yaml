@@ -1,0 +1,190 @@
+live:
+  - name: Ethereum
+    networks:
+      - name: Goerli (Infura)
+        chainid: 5
+        id: goerli
+        host: https://goerli.infura.io/v3/$WEB3_INFURA_PROJECT_ID
+        explorer: https://api-goerli.etherscan.io/api
+        multicall2: "0x5BA1e12693Dc8F9c48aAD8770482f4739bEeD696"
+        provider: infura
+        name: Holesky
+        chainid: 17000
+        id: holesky
+        host: https://ethereum-holesky.publicnode.com
+        explorer: https://api-holesky.etherscan.io/api
+        multicall2: "0x5BA1e12693Dc8F9c48aAD8770482f4739bEeD696"
+  - name: Avalanche
+    networks:
+      - chainid: 43113
+        host: https://api.avax-test.network/ext/bc/C/rpc
+        id: avax-test
+        name: Testnet
+        explorer: https://api-testnet.snowtrace.io/api
+  - name: Binance Smart Chain
+    networks:
+      - name: Testnet
+        chainid: 97
+        id: bnb-test
+        host: https://data-seed-prebsc-1-s1.binance.org:8545
+        explorer: https://api-testnet.bscscan.com/api
+  - name: Fantom Opera
+    networks:
+      - name: Testnet
+        chainid: 0xfa2
+        id: fantom-test
+        host: https://rpc.testnet.fantom.network
+        explorer: https://api-testnet.ftmscan.com/api
+  - name: Polygon
+    networks:
+      - name: Mumbai Testnet (Infura)
+        chainid: 80001
+        id: polygon-test
+        host: https://polygon-mumbai.infura.io/v3/$WEB3_INFURA_PROJECT_ID
+        explorer: https://api-testnet.polygonscan.com/api
+        multicall2: "0x6842E0412AC1c00464dc48961330156a07268d14"
+  - name: Celo
+    networks:
+      - name: celo_alfajores
+        chainid: 44787
+        id: celo-test
+        host: https://alfajores-forno.celo-testnet.org
+        explorer: https://alfajores.celoscan.io/api
+  - name: Cronos
+    networks:
+      - name: cronos_testnet
+        chainid: 338
+        id: cronos-test
+        host: https://evm-t3.cronos.org/
+        explorer: https://api-testnet.cronoscan.com/api
+
+
+
+development:
+  - name: Anvil
+    id: anvil
+    cmd: anvil
+    host: http://127.0.0.1
+    cmd_settings:
+      port: 8545
+  - name: Anvil (Mainnet Fork)
+    id: anvil-fork
+    cmd: anvil
+    host: http://127.0.0.1
+    cmd_settings:
+      fork: mainnet
+      port: 8545
+  - name: Ganache-CLI
+    id: development
+    cmd: ganache-cli
+    host: http://127.0.0.1
+    cmd_settings:
+      port: 8545
+      gas_limit: 12000000
+      accounts: 10
+      evm_version: istanbul
+      mnemonic: brownie
+  - name: Geth Dev
+    id: geth-dev
+    cmd: ethnode
+    host: http://127.0.0.1
+    cmd_settings:
+      port: 8545
+  - name: Hardhat
+    id: hardhat
+    cmd: npx hardhat node
+    host: http://localhost
+    cmd_settings:
+      port: 8545
+  - name: Hardhat (Mainnet Fork)
+    id: hardhat-fork
+    cmd: npx hardhat node
+    host: http://localhost
+    timeout: 120
+    cmd_settings:
+      port: 8545
+      fork: mainnet
+  - name: Ganache-CLI (Mainnet Fork)
+    id: mainnet-fork
+    cmd: ganache-cli
+    host: http://127.0.0.1
+    timeout: 120
+    cmd_settings:
+      port: 8545
+      gas_limit: 12000000
+      accounts: 10
+      evm_version: istanbul
+      mnemonic: brownie
+      fork: mainnet
+  - name: Ganache-CLI (BSC-Mainnet Fork)
+    id: bsc-main-fork
+    cmd: ganache-cli
+    host: http://127.0.0.1
+    timeout: 120
+    cmd_settings:
+      port: 8545
+      gas_limit: 12000000
+      accounts: 10
+      evm_version: istanbul
+      mnemonic: brownie
+      fork: bsc-main
+  - name: Ganache-CLI (FTM-Mainnet Fork)
+    id: ftm-main-fork
+    cmd: ganache-cli
+    host: http://127.0.0.1
+    timeout: 120
+    cmd_settings:
+      port: 8545
+      gas_limit: 12000000
+      accounts: 10
+      evm_version: istanbul
+      mnemonic: brownie
+      fork: ftm-main
+  - name: Ganache-CLI (Polygon-Mainnet Fork)
+    id: polygon-main-fork
+    cmd: ganache-cli
+    host: http://127.0.0.1
+    timeout: 120
+    cmd_settings:
+      port: 8545
+      gas_limit: 20000000
+      accounts: 10
+      evm_version: istanbul
+      mnemonic: brownie
+      fork: polygon-main
+  - name: Ganache-CLI (XDai-Mainnet Fork)
+    id: xdai-main-fork
+    cmd: ganache-cli
+    host: http://127.0.0.1
+    timeout: 120
+    cmd_settings:
+      port: 8545
+      gas_limit: 20000000
+      accounts: 10
+      evm_version: istanbul
+      mnemonic: brownie
+      fork: xdai-main
+  - name: Ganache-CLI (Avax-Mainnet Fork)
+    id: avax-main-fork
+    cmd: ganache-cli
+    host: http://127.0.0.1
+    timeout: 120
+    cmd_settings:
+      port: 8545
+      gas_limit: 20000000
+      accounts: 10
+      evm_version: istanbul
+      mnemonic: brownie
+      fork: avax-main
+  - name: Ganache-CLI (Aurora-Mainnet Fork)
+    id: aurora-main-fork
+    cmd: ganache-cli
+    host: http://127.0.0.1
+    timeout: 120
+    cmd_settings:
+      port: 8545
+      gas_limit: 20000000
+      accounts: 10
+      evm_version: istanbul
+      mnemonic: brownie
+      fork: aurora-main
